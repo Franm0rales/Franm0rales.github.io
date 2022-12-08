@@ -1,2 +1,1 @@
-# Franm0rales.github.io
-Juego space Proyecto JavaScript
+This is just a tutorial repository for Releevant students.

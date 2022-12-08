@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+    <script src="/js/game.js"></script>
+    <script>
+      // game setttings
+      const SCREEN_WIDTH = 800;
+      const SCREEN_HEIGHT = 600;
+      const PLAYER_SCALE = 0.2;
+      const PLAYER_VELOCITY = 4;
+      const ENEMY_SCALE = 0.2;
+      const RELOAD_SCALE=0.05
+      const BACKGROUND_VELOCITY=1;
+      const BULLET_VELOCITY=5;
+      const FRAMES_PER_BULLET = 20;
+      const ENEMY_VELOCITY=0.8
+      // game config
+      const config = {
+        type: Phaser.AUTO,
+        width: SCREEN_WIDTH,
+        height: SCREEN_HEIGHT,
+        physics: {
+          default: "arcade",
+          arcade: {
+            gravity: { y: 200 },
+          },
+        },
+        scene: {
+          preload: preload,
+          create: create,
+          update: update,
+        },
+      };
+
+      const game = new Phaser.Game(config);
+    </script> 
+    <a class="restart" href="index.html">
+    <input id="reiniciar"  type="button" value="Reiniciar" 
+    onclick="reiniciar()"  /></a>
+  </body>
+</html>
