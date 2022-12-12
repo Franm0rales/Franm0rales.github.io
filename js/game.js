@@ -317,7 +317,9 @@ function colision(bala) {
   ) {
     if (contador < 1) {
       collectEnemy();
+      
     }
+
     explosion.setPosition(enemy.x, enemy.y);
     explosion.explode();
     enemy.setY((enemy.height * ENEMY_SCALE) / 2);
@@ -326,6 +328,30 @@ function colision(bala) {
         (enemy.width / 2) * ENEMY_SCALE
     );
     bala.destroy();
+    
+  }
+}
+function colisionPlayer(bala) {
+  if (
+    bala.x >= enemy.x - (enemy.width * ENEMY_SCALE) / 2 &&
+    bala.x <= enemy.x + (enemy.width * ENEMY_SCALE) / 2 &&
+    bala.y >= enemy.y - (enemy.height * ENEMY_SCALE) / 2 &&
+    bala.y <= enemy.y + (enemy.height * ENEMY_SCALE) / 2
+  ) {
+    if (contador < 1) {
+      collectEnemy();
+      
+    }
+
+    explosion.setPosition(enemy.x, enemy.y);
+    explosion.explode();
+    enemy.setY((enemy.height * ENEMY_SCALE) / 2);
+    enemy.setX(
+      Math.random() * (SCREEN_WIDTH - enemy.width * ENEMY_SCALE) +
+        (enemy.width / 2) * ENEMY_SCALE
+    );
+    
+    
   }
 }
 function collectEnemy() {
@@ -396,6 +422,7 @@ function moverEnemy() {
     final.play();
     pausa = true;
   }
+  colisionPlayer(player)
 }
 
 function play() {
